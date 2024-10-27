@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { Swiper, SwiperSlide } from "swiper/react";
+import Background from "../components/Backgound";
+// import { Swiper, SwiperSlide } from "swiper/react";
 
 const webtoonMain = [
   {
@@ -41,6 +42,17 @@ const webtoonMain = [
   // }
 ];
 
+// const MainBg = styled.div`
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100vh;
+//   background: url("/webtoon_mainbg.jpeg") no-repeat center center / cover;
+//   filter: brightness(0.6);
+//   z-index: -1;
+// `;
+
 const Wrap = styled.div`
   width: 100%;
   max-width: 1250px;
@@ -55,6 +67,7 @@ const ConWrap = styled.div`
   max-width: 1250px;
   display: flex;
   justify-content: space-between;
+  margin-top: 10px;
 `;
 
 const Con = styled.div`
@@ -70,6 +83,7 @@ const Con = styled.div`
   a {
     text-decoration: none;
     color: #000;
+    background-color: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -113,6 +127,8 @@ const Main = () => {
           ))}
         </ConWrap>
       </Wrap>
+      <Background id={0} />
+      {/* <MainBg></MainBg> */}
     </>
   );
 };

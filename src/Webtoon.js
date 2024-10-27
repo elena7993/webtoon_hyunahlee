@@ -3,6 +3,7 @@ import Main from "./pages/Main";
 import Sub01 from "./pages/Sub01";
 import PageNotFound from "./pages/PageNotFound";
 import Header from "./components/Header";
+import Background from "./components/Backgound";
 
 const Webtoon = () => {
   return (
@@ -16,6 +17,7 @@ const Webtoon = () => {
             <Route path="/*" element={<PageNotFound />} />
           </Route>
         </Routes>
+        {/* <Background /> */}
       </HashRouter>
     </>
   );

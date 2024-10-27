@@ -19,27 +19,32 @@ const HeaderWrap = styled.div`
       font-size: 28px;
       /* font-weight: 900; */
       font-family: Georgia, "Times New Roman", Times, serif;
+      color: #fff;
     }
     span {
+      font-size: 18px;
+      font-weight: 800;
+      color: #fff;
       margin: 7px 0 0 10px;
     }
   }
 
   img {
-    width: 52px;
-    height: 52px;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
   }
 `;
 
 const Header = () => {
   return (
     <HeaderWrap>
-      <h3>
+      <div>
         <a href="#">
           <h3>무협,</h3>
           <span>툰</span>
         </a>
-      </h3>
+      </div>
       <img src="/webtoonlogo.jpg" alt="logo_img" />
     </HeaderWrap>
   );

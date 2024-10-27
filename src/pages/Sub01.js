@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
+import Background from "../components/Backgound";
 
 const webtoonInfo = [
   {
@@ -68,6 +69,10 @@ const webtoonInfo = [
   },
 ];
 
+const SubPage = styled.div`
+  background: linear-gradient(to bottom #f0f4f8, #d9e2ec);
+`;
+
 const ConWrap = styled.div`
   width: 100%;
   max-width: 1200px;
@@ -90,16 +95,18 @@ const ConWrap = styled.div`
 
   .textwrap {
     h3 {
+      color: #fff;
       margin: 15px 0;
     }
 
     p:nth-child(2) {
+      color: #fff;
       font-weight: 700;
       margin-bottom: 25px;
     }
 
     p:nth-child(3) {
-      color: #444;
+      color: #f1f1f1;
       margin-bottom: 45px;
     }
 
@@ -107,18 +114,22 @@ const ConWrap = styled.div`
       font-weight: 600;
       font-family: "Times New Roman", Times, serif;
       font-style: italic;
-      color: #797979;
+      color: #f1f1f1;
     }
   }
 
   .rightcon {
     width: 100%;
-    max-width: 600px;
+    max-width: 400px;
     height: 500px;
-    background: #f1f1f1
-      url(https://www.doyacart.com/upFolder/doyacart/upFolder/upFile/summernote/dy_design_customize/1698731845686_courseInfoImage_6540973dab468_0.webp)
-      no-repeat center / cover;
-    margin-top: 30px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+      filter: blur(5px);
+      margin-top: 30px;
+    }
   }
 `;
 
@@ -128,22 +139,28 @@ const Sub01 = () => {
 
   return (
     <div>
-      <ConWrap>
-        <div className="leftcon">
-          <div className="imgwrap">
+      <SubPage>
+        <ConWrap>
+          <div className="leftcon">
+            <div className="imgwrap">
+              <img src={webtoonInfo[id].img} alt={webtoonInfo[id].title} />
+            </div>
+
+            <div className="textwrap">
+              <h3>{webtoonInfo[id].title}</h3>
+              <p>{webtoonInfo[id].writter}</p>
+              <p>{webtoonInfo[id].desc}</p>
+              <p>{webtoonInfo[id].hashTag}</p>
+            </div>
+          </div>
+
+          <div className="rightcon">
             <img src={webtoonInfo[id].img} alt={webtoonInfo[id].title} />
           </div>
+        </ConWrap>
+      </SubPage>
 
-          <div className="textwrap">
-            <h3>{webtoonInfo[id].title}</h3>
-            <p>{webtoonInfo[id].writter}</p>
-            <p>{webtoonInfo[id].desc}</p>
-            <p>{webtoonInfo[id].hashTag}</p>
-          </div>
-        </div>
-
-        <div className="rightcon"></div>
-      </ConWrap>
+      <Background id={1} />
     </div>
   );
 };
