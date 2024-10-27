@@ -1,3 +1,6 @@
+import { useParams } from "react-router-dom";
+import styled from "styled-components";
+
 const webtoonInfo = [
   {
     id: 0,
@@ -89,21 +92,94 @@ const webtoonInfo = [
     '강호제패'를 품은 스무 살 청년, '적이건(赤利乾)'의 유쾌한 여정이 시작된다! `,
     hashTag: `#무협/사극 #정통무협 #동양 #배틀 #능글남 #미친작화 #무협/사극 #고인물 `,
   },
-  {
-    id: 7,
-    title: "아수라",
-    img: "https://image-comic.pstatic.net/webtoon/826670/thumbnail/thumbnail_IMAG21_ecfd3f55-b872-45a8-9837-a94d1dcb9f72.jpg",
-    writter: "류기운/문정후",
-    desc: `최초로 대륙을 통일한 절대자로부터 불사의 비밀을 알아오라는 명을 받고 떠난 이가 있었다.
-    세상의 모든 곳을 찾아다녀서라도 반드시 불사의 비밀을 알아올 것으로 믿었던 그는
-    절대자가 죽고 제국이 몰락할 때까지 끝내 돌아오지 않았고, 수많은 억측만을 남긴 채 사람들의 기억 속에서도 차츰 잊혀져갔다.
-    그리고 오랜 시간이 흐른 뒤... `,
-    hashTag: `#판타지 #동양 #모험 #액션 #무협/사극 #성장물 #동양풍판타지 #인외존재 `,
-  },
+  // {
+  //   id: 7,
+  //   title: "아수라",
+  //   img: "https://image-comic.pstatic.net/webtoon/826670/thumbnail/thumbnail_IMAG21_ecfd3f55-b872-45a8-9837-a94d1dcb9f72.jpg",
+  //   writter: "류기운/문정후",
+  //   desc: `최초로 대륙을 통일한 절대자로부터 불사의 비밀을 알아오라는 명을 받고 떠난 이가 있었다.
+  //   세상의 모든 곳을 찾아다녀서라도 반드시 불사의 비밀을 알아올 것으로 믿었던 그는
+  //   절대자가 죽고 제국이 몰락할 때까지 끝내 돌아오지 않았고, 수많은 억측만을 남긴 채 사람들의 기억 속에서도 차츰 잊혀져갔다.
+  //   그리고 오랜 시간이 흐른 뒤... `,
+  //   hashTag: `#판타지 #동양 #모험 #액션 #무협/사극 #성장물 #동양풍판타지 #인외존재 `,
+  // },
 ];
 
+const ConWrap = styled.div`
+  width: 100%;
+  max-width: 1200px;
+  height: 500px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+
+  .imgwrap {
+    width: 195px;
+    height: 250px;
+    margin-top: 30px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .textwrap {
+    h3 {
+      margin: 10px 0;
+    }
+
+    p:nth-child(2) {
+      font-weight: 700;
+      margin-bottom: 25px;
+    }
+
+    p:nth-child(3) {
+      color: #444;
+      margin-bottom: 45px;
+    }
+
+    p:nth-child(4) {
+      font-weight: 600;
+      font-family: "Times New Roman", Times, serif;
+      color: #797979;
+    }
+  }
+
+  .rightcon {
+    width: 100%;
+    max-width: 600px;
+    height: 500px;
+    background: #f1f1f1
+      url(https://www.doyacart.com/upFolder/doyacart/upFolder/upFile/summernote/dy_design_customize/1698731845686_courseInfoImage_6540973dab468_0.webp)
+      no-repeat center / cover;
+    margin-top: 30px;
+  }
+`;
+
 const Sub01 = () => {
-  return <div></div>;
+  const params = useParams();
+  const id = params.id;
+
+  return (
+    <div>
+      <ConWrap>
+        <div className="leftcon">
+          <div className="imgwrap">
+            <img src={webtoonInfo[id].img} alt={webtoonInfo[id].title} />
+          </div>
+
+          <div className="textwrap">
+            <h3>{webtoonInfo[id].title}</h3>
+            <p>{webtoonInfo[id].writter}</p>
+            <p>{webtoonInfo[id].desc}</p>
+            <p>{webtoonInfo[id].hashTag}</p>
+          </div>
+        </div>
+
+        <div className="rightcon"></div>
+      </ConWrap>
+    </div>
+  );
 };
 
 export default Sub01;

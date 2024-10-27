@@ -1,3 +1,7 @@
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+import { Swiper, SwiperSlide } from "swiper/react";
+
 const webtoonMain = [
   {
     id: 0,
@@ -41,56 +45,85 @@ const webtoonMain = [
     wirtter: "박시대/장영훈",
     img: "https://image-comic.pstatic.net/webtoon/832677/thumbnail/thumbnail_IMAG21_05ee91c5-55cb-49d5-9935-5608a8bbe41c.jpg",
   },
-  {
-    id: 7,
-    title: "아수라",
-    wirtter: "류기운/문정후",
-    img: "https://image-comic.pstatic.net/webtoon/826670/thumbnail/thumbnail_IMAG21_ecfd3f55-b872-45a8-9837-a94d1dcb9f72.jpg",
-  },
+  // {
+  //   id: 7,
+  //   title: "아수라",
+  //   wirtter: "류기운/문정후",
+  //   img: "https://image-comic.pstatic.net/webtoon/826670/thumbnail/thumbnail_IMAG21_ecfd3f55-b872-45a8-9837-a94d1dcb9f72.jpg",
+  // },
 ];
+
+const Wrap = styled.div`
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+`;
+
+const ConWrap = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+`;
+
+const Con = styled.div`
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  a {
+    text-decoration: none;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+  }
+
+  h3 {
+    margin: 10px 0 5px;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: #555;
+    text-align: center;
+  }
+`;
 
 const Main = () => {
   return (
     <>
       <Wrap>
-        <SwiperWrap>
-          <div>
-            <img src="" alt="" />
-            <h3></h3>
-            <p></p>
-          </div>
-
-          <div>
-            <img src="" alt="" />
-            <h3></h3>
-            <p></p>
-          </div>
-
-          <div>
-            <img src="" alt="" />
-            <h3></h3>
-            <p></p>
-          </div>
-
-          <div>
-            <img src="" alt="" />
-            <h3></h3>
-            <p></p>
-          </div>
-
-          <div>
-            <img src="" alt="" />
-            <h3></h3>
-            <p></p>
-          </div>
-        </SwiperWrap>
-
-        <div class="swiper-pagination"></div>
-
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-
-        <div class="swiper-scrollbar"></div>
+        <ConWrap>
+          {webtoonMain.map((webtoon) => (
+            <Con key={webtoon.id}>
+              <Link to={`/sub01/${webtoon.id}`}>
+                <img src={webtoon.img} alt={webtoon.title} />
+                <h3>{webtoon.title}</h3>
+                <p>{webtoon.wirtter}</p>
+              </Link>
+            </Con>
+          ))}
+        </ConWrap>
       </Wrap>
     </>
   );
