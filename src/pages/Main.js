@@ -11,9 +11,9 @@ const webtoonMain = [
   },
   {
     id: 1,
-    title: "천하제일 대사형",
-    wirtter: "YooN/북미혼",
-    img: "https://image-comic.pstatic.net/webtoon/802278/thumbnail/thumbnail_IMAG21_1f75b2d4-e3cd-4a9f-917e-635557178b08.jpg",
+    title: "마도전생기",
+    wirtter: "포스스튜디오/codezero",
+    img: "https://image-comic.pstatic.net/webtoon/807777/thumbnail/thumbnail_IMAG21_e47489ea-bf97-4726-a8e7-6403092a303a.jpg",
   },
   {
     id: 2,
@@ -33,29 +33,17 @@ const webtoonMain = [
     wirtter: "해사",
     img: "https://image-comic.pstatic.net/webtoon/827744/thumbnail/thumbnail_IMAG21_a94e2923-a434-4dc1-925f-a2ba4005a122.jpg",
   },
-  {
-    id: 5,
-    title: "마도전생기",
-    wirtter: "포스스튜디오/codezero",
-    img: "https://image-comic.pstatic.net/webtoon/807777/thumbnail/thumbnail_IMAG21_e47489ea-bf97-4726-a8e7-6403092a303a.jpg",
-  },
-  {
-    id: 6,
-    title: "절대군림",
-    wirtter: "박시대/장영훈",
-    img: "https://image-comic.pstatic.net/webtoon/832677/thumbnail/thumbnail_IMAG21_05ee91c5-55cb-49d5-9935-5608a8bbe41c.jpg",
-  },
   // {
-  //   id: 7,
-  //   title: "아수라",
-  //   wirtter: "류기운/문정후",
-  //   img: "https://image-comic.pstatic.net/webtoon/826670/thumbnail/thumbnail_IMAG21_ecfd3f55-b872-45a8-9837-a94d1dcb9f72.jpg",
-  // },
+  //   id: 6,
+  //   title: "절대군림",
+  //   wirtter: "박시대/장영훈",
+  //   img: "https://image-comic.pstatic.net/webtoon/832677/thumbnail/thumbnail_IMAG21_05ee91c5-55cb-49d5-9935-5608a8bbe41c.jpg",
+  // }
 ];
 
 const Wrap = styled.div`
   width: 100%;
-  max-width: 1200px;
+  max-width: 1250px;
   margin: 0 auto;
   padding: 20px;
   display: flex;
@@ -63,11 +51,10 @@ const Wrap = styled.div`
 `;
 
 const ConWrap = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 20px;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1250px;
+  display: flex;
+  justify-content: space-between;
 `;
 
 const Con = styled.div`
@@ -97,13 +84,14 @@ const Con = styled.div`
 
   h3 {
     margin: 10px 0 5px;
-    font-size: 1rem;
+    font-size: 18px;
     text-align: center;
   }
 
   p {
     margin: 0;
-    font-size: 0.875rem;
+    margin-bottom: 5px;
+    font-size: 14px;
     color: #555;
     text-align: center;
   }

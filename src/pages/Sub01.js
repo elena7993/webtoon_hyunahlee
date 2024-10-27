@@ -16,16 +16,16 @@ const webtoonInfo = [
   },
   {
     id: 1,
-    title: "천하제일 대사형",
-    img: "https://image-comic.pstatic.net/webtoon/802278/thumbnail/thumbnail_IMAG21_1f75b2d4-e3cd-4a9f-917e-635557178b08.jpg",
-    writter: "YooN",
-    desc: `잔혹했던 정사대전에 반 강제적으로 끌려갔던 대사형 ‘혁무상’.
-    수많은 피가 흐른 전쟁에 참전한지 7년. 전쟁은 진즉 끝났음에도 돌아오지 않아 죽은 줄 알았다.
-    
-    간신히 고향 땅을 밟은 혁무상이 보게 된 것은, 고작 삼류 흑도에게 핍박당해 무너져가는 고향 용호무관의 모습.
-    
-    분노에 찬 혁무상. 용호무관을 향해 다가오는 모든 위협에 대사형은 검을 빼어 든다.`,
-    hashTag: `#무협/사극 #사이다 #참교육 #환골탈태 #판무 #복수극 #먼치킨 #소설원작`,
+    title: "마도전생기",
+    img: "https://image-comic.pstatic.net/webtoon/807777/thumbnail/thumbnail_IMAG21_e47489ea-bf97-4726-a8e7-6403092a303a.jpg",
+    writter: "포스스튜디오/codezero",
+    desc: `정파무림 의천맹의 최강 살수, 천하진.
+
+    자유를 찾기 위해 탈출을 감행하지만 코앞에서 목숨을 잃고 만다.
+
+    그런데…
+    '신교불패, 만마앙복. 삼공자님의 쾌유를 경하드리옵니다!...' `,
+    hashTag: `#무협/사극 #전쟁 #악역이주인공 #지금추천작 #성장물 #힘순찐 #회귀 `,
   },
   {
     id: 2,
@@ -66,43 +66,6 @@ const webtoonInfo = [
     그 '개'에게 목이 잘려 시야가 흐려지는 순간, 6년 전 그를 처음 만났던 시기로 회귀하고 만다...`,
     hashTag: `#무협/사극 #사이다 #동양 #액션 #성장물 #동양풍판타지 #회귀 #판무`,
   },
-  {
-    id: 5,
-    title: "마도전생기",
-    img: "https://image-comic.pstatic.net/webtoon/807777/thumbnail/thumbnail_IMAG21_e47489ea-bf97-4726-a8e7-6403092a303a.jpg",
-    writter: "포스스튜디오/codezero",
-    desc: `정파무림 의천맹의 최강 살수, 천하진.
-
-    자유를 찾기 위해 탈출을 감행하지만 코앞에서 목숨을 잃고 만다.
-
-    그런데…
-    '신교불패, 만마앙복. 삼공자님의 쾌유를 경하드리옵니다!...' `,
-    hashTag: `#무협/사극 #전쟁 #악역이주인공 #지금추천작 #성장물 #힘순찐 #회귀 `,
-  },
-  {
-    id: 6,
-    title: "절대군림",
-    img: "https://image-comic.pstatic.net/webtoon/832677/thumbnail/thumbnail_IMAG21_05ee91c5-55cb-49d5-9935-5608a8bbe41c.jpg",
-    writter: "박시대/장영훈",
-    desc: `"이 강호, 제가 먹습니다!"
-    왼손에는 군자검을, 오른손에는 지옥도를 든
-    미스터리한 과일상 아들.
-    입담과 재주는 물론, 압도적인 무공 실력까지 갖춘
-    완벽한 그의 진짜 정체는 무엇일까.
-    '강호제패'를 품은 스무 살 청년, '적이건(赤利乾)'의 유쾌한 여정이 시작된다! `,
-    hashTag: `#무협/사극 #정통무협 #동양 #배틀 #능글남 #미친작화 #무협/사극 #고인물 `,
-  },
-  // {
-  //   id: 7,
-  //   title: "아수라",
-  //   img: "https://image-comic.pstatic.net/webtoon/826670/thumbnail/thumbnail_IMAG21_ecfd3f55-b872-45a8-9837-a94d1dcb9f72.jpg",
-  //   writter: "류기운/문정후",
-  //   desc: `최초로 대륙을 통일한 절대자로부터 불사의 비밀을 알아오라는 명을 받고 떠난 이가 있었다.
-  //   세상의 모든 곳을 찾아다녀서라도 반드시 불사의 비밀을 알아올 것으로 믿었던 그는
-  //   절대자가 죽고 제국이 몰락할 때까지 끝내 돌아오지 않았고, 수많은 억측만을 남긴 채 사람들의 기억 속에서도 차츰 잊혀져갔다.
-  //   그리고 오랜 시간이 흐른 뒤... `,
-  //   hashTag: `#판타지 #동양 #모험 #액션 #무협/사극 #성장물 #동양풍판타지 #인외존재 `,
-  // },
 ];
 
 const ConWrap = styled.div`
@@ -120,12 +83,14 @@ const ConWrap = styled.div`
     img {
       width: 100%;
       height: 100%;
+      border-radius: 8px;
+      box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
     }
   }
 
   .textwrap {
     h3 {
-      margin: 10px 0;
+      margin: 15px 0;
     }
 
     p:nth-child(2) {
@@ -141,6 +106,7 @@ const ConWrap = styled.div`
     p:nth-child(4) {
       font-weight: 600;
       font-family: "Times New Roman", Times, serif;
+      font-style: italic;
       color: #797979;
     }
   }
